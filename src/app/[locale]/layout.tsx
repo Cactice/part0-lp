@@ -9,7 +9,7 @@ import { Inter, Rubik, Space_Grotesk } from 'next/font/google'
 import NextTopLoader from 'nextjs-toploader'
 import { Header } from './components/Header'
 import './globals.css'
-import {locales} from '@/i18n';
+import {locales} from '../../i18n';
 import {unstable_setRequestLocale} from 'next-intl/server';
  
 export function generateStaticParams() {
