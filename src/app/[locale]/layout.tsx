@@ -10,6 +10,10 @@ import NextTopLoader from 'nextjs-toploader'
 import { Header } from './components/Header'
 import './globals.css'
 
+export async function generateStaticParams() {
+  return [{locale:'en'},{locale:'ja'}]
+}
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--inter'
