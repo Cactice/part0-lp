@@ -16,6 +16,14 @@ export function generateStaticParams() {
   return locales.map((locale) => ({locale}));
 }
 
+export async function generateMetadata({params: {locale}}) {
+  const t = await getTranslations({locale, namespace: 'Metadata'});
+ 
+  return {
+    title: t('title')
+  };
+}
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--inter'
