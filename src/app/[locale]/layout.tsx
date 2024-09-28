@@ -9,9 +9,11 @@ import { Inter, Rubik, Space_Grotesk } from 'next/font/google'
 import NextTopLoader from 'nextjs-toploader'
 import { Header } from './components/Header'
 import './globals.css'
-
-export async function generateStaticParams() {
-  return [{locale:'en'},{locale:'ja'}]
+import {locales} from '@/i18n/routing';
+import {unstable_setRequestLocale} from 'next-intl/server';
+ 
+export function generateStaticParams() {
+  return locales.map((locale) => ({locale}));
 }
 
 const inter = Inter({
@@ -38,6 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
   params: { locale: string }
 }) {
+  unstable_setRequestLocale(locale);
   const messages = useMessages()
   return (
     <html
