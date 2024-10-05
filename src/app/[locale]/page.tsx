@@ -1,10 +1,7 @@
+'use client'
 import { useTranslations } from 'next-intl'
 import Button from './components/Button'
-
-
-export async function generateStaticParams() {
-  return [{locale:'en'},{locale:'ja'}]
-}
+import { locales } from '@/src/i18n'
 
 export default function DashboardPage() {
   const t = useTranslations('')
