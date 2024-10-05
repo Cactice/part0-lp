@@ -4,8 +4,8 @@ const withNextIntl = createNextIntlPlugin()
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  output: 'export',
+  rewrites: async () => [{ source: '/', destination: '/en' }]
 }
-
 
 module.exports = withNextIntl(nextConfig)
